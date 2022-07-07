@@ -193,6 +193,8 @@ Chann1:Button("anti report🔰", function()
 end) -- The Scirpt The Button Executes
 
 Chann1:Button("auto jump", function()
+while true do wait(1)
+game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping") end
 
 end) -- The Scirpt The Button Executes
 
