@@ -225,8 +225,6 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 end) -- The Scirpt The Button Executes
 
-Chann1:Label("chillhubx.") -- A Label (Ofc)
-
 local Chann1 = Tab1:Channel("auto pickup item") -- Channel 0_0
 
 chann1:button("on", function()
