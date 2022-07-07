@@ -2,8 +2,8 @@ local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
 wait(0.9) 
 CoreGui:SetCore("SendNotification", {
     -- Customizable
-    Title = "System☢️",
-    Text = "9.9.9",
+    Title = "System🔄",
+    Text = "10.0.0",
     Duration = 19, -- Set the duration to how much you want this to stay
     -- More code in part 2
 })
