@@ -3,7 +3,7 @@ wait(0.9)
 CoreGui:SetCore("SendNotification", {
     -- Customizable
     Title = "System🔄",
-    Text = "10.1.0",
+    Text = "10.2.0",
     Duration = 19, -- Set the duration to how much you want this to stay
     -- More code in part 2
 })
@@ -32,73 +32,147 @@ print("🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩")
 print("🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩")
 print("System.Script it's working no update to day")
 
-local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
-local Win1 = DiscordLib:Window("ChillHUBx") -- Title/Name
 
-local Tab1 = Win1:Server("HOME", "") -- Server/Tab
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("Chill(Hub)","Synapse")
 
-local Chann1 = Tab1:Channel("auto pickup") -- Channel 0_0
-
-chann1:button("on", function()
---auto pickup
-_G.on = true --false to turn off and true to turn on
-while _G.on do
-wait(1) -- you can change the delay here
-char = game:GetService('Players').LocalPlayer.Character
-game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
-char = body end)
-for i,v in pairs(workspace:GetDescendants()) do
-if v:IsA('Tool') then
-char.Humanoid:EquipTool(v) end end
+-- Tabs
+local Tab1 = Window:NewTab("Home")
+local Tab1Section = Tab1:NewSection("Home") 
+local Tab1Section = Tab1:NewSection("owner script made by VV20XX")
+local Tab1Section = Tab1:NewSection("subscribe to my youtobe for more updates")
+Tab1Section:NewButton("spam chat","lol", function()
+    local function chat(msg)
+	game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(msg, "All")
 end
-end) -- the scirpt the button executes
 
---main--
+chat("wellcome to the Chill(Hub)")
+Wait("2")
+chat("support my script for more")
+Wait("3")
+chat("subscribe to more script")
+Wait("4")
+chat("made by VV20XX")
+Wait("5")
+chat("made by VV20XX")
 
-chann1:button("off", function()
---auto pickup
-_G.on = false --false to turn off and true to turn on
-while _G.on do
-wait(1) -- you can change the delay here
-char = game:GetService('Players').LocalPlayer.Character
-game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
-char = body end)
-for i,v in pairs(workspace:GetDescendants()) do
-if v:IsA('Tool') then
-char.Humanoid:EquipTool(v) end end
-end
-end) -- the scirpt the button executes
+end) 
 
-local Chann1 = Tab1:Channel("Channel(1)") -- Channel 0_0
 
-Chann1:Button("jump infi", function()
-local InfiniteJumpEnabled = true
+
+local Tab1 = Window:NewTab("main")
+local Tab1Section = Tab1:NewSection("main")
+
+-- Buttons/Windows/
+Tab1Section:NewButton("FLy-1","fly1", function()
+    repeat wait() 
+	until game.Players.LocalPlayer and game.Players.LocalPlayer.Character and game.Players.LocalPlayer.Character:findFirstChild("Head") and game.Players.LocalPlayer.Character:findFirstChild("Humanoid") 
+local mouse = game.Players.LocalPlayer:GetMouse() 
+repeat wait() until mouse
+local plr = game.Players.LocalPlayer 
+local torso = plr.Character.Head 
+local flying = false
+local deb = true 
+local ctrl = {f = 0, b = 0, l = 0, r = 0} 
+local lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+local maxspeed = 400 
+local speed = 5000 
+
+function Fly() 
+local bg = Instance.new("BodyGyro", torso) 
+bg.P = 9e4 
+bg.maxTorque = Vector3.new(9e9, 9e9, 9e9) 
+bg.cframe = torso.CFrame 
+local bv = Instance.new("BodyVelocity", torso) 
+bv.velocity = Vector3.new(0,0.1,0) 
+bv.maxForce = Vector3.new(9e9, 9e9, 9e9) 
+repeat wait() 
+plr.Character.Humanoid.PlatformStand = true 
+if ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0 then 
+speed = speed+.5+(speed/maxspeed) 
+if speed > maxspeed then 
+speed = maxspeed 
+end 
+elseif not (ctrl.l + ctrl.r ~= 0 or ctrl.f + ctrl.b ~= 0) and speed ~= 0 then 
+speed = speed-1 
+if speed < 0 then 
+speed = 0 
+end 
+end 
+if (ctrl.l + ctrl.r) ~= 0 or (ctrl.f + ctrl.b) ~= 0 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (ctrl.f+ctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(ctrl.l+ctrl.r,(ctrl.f+ctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+lastctrl = {f = ctrl.f, b = ctrl.b, l = ctrl.l, r = ctrl.r} 
+elseif (ctrl.l + ctrl.r) == 0 and (ctrl.f + ctrl.b) == 0 and speed ~= 0 then 
+bv.velocity = ((game.Workspace.CurrentCamera.CoordinateFrame.lookVector * (lastctrl.f+lastctrl.b)) + ((game.Workspace.CurrentCamera.CoordinateFrame * CFrame.new(lastctrl.l+lastctrl.r,(lastctrl.f+lastctrl.b)*.2,0).p) - game.Workspace.CurrentCamera.CoordinateFrame.p))*speed 
+else 
+bv.velocity = Vector3.new(0,0.1,0) 
+end 
+bg.cframe = game.Workspace.CurrentCamera.CoordinateFrame * CFrame.Angles(-math.rad((ctrl.f+ctrl.b)*50*speed/maxspeed),0,0) 
+until not flying 
+ctrl = {f = 0, b = 0, l = 0, r = 0} 
+lastctrl = {f = 0, b = 0, l = 0, r = 0} 
+speed = 0 
+bg:Destroy() 
+bv:Destroy() 
+plr.Character.Humanoid.PlatformStand = false 
+end 
+mouse.KeyDown:connect(function(key) 
+if key:lower() == "e" then 
+if flying then flying = false 
+else 
+flying = true 
+Fly() 
+end 
+elseif key:lower() == "w" then 
+ctrl.f = 1 
+elseif key:lower() == "s" then 
+ctrl.b = -1 
+elseif key:lower() == "a" then 
+ctrl.l = -1 
+elseif key:lower() == "d" then 
+ctrl.r = 1 
+end 
+end) 
+mouse.KeyUp:connect(function(key) 
+if key:lower() == "w" then 
+ctrl.f = 0 
+elseif key:lower() == "s" then 
+ctrl.b = 0 
+elseif key:lower() == "a" then 
+ctrl.l = 0 
+elseif key:lower() == "d" then 
+ctrl.r = 0 
+end 
+end)
+Fly()
+end) 
+
+
+
+Tab1Section:NewButton("Inf Jumps", "Enables Inf Jumps", function()
+    local InfiniteJumpEnabled = true
 game:GetService("UserInputService").JumpRequest:connect(function()
 	if InfiniteJumpEnabled then
 		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
 	end
-end) -- The Scirpt The Button Executes
+end)
 end)
 
-Chann1:Seperator() -- Keep This If You Want To
-
-Chann1:Toggle("Toggle",false, function(bool)
-print(bool) -- Script The Toggle Executes
+Tab1Section:NewToggle("Fov", "Changes Fov", function(state)
+    if state then
+        game.Workspace.CurrentCamera.FieldOfView = 120
+    else
+        game.Workspace.CurrentCamera.FieldOfView = 80
+    end
 end)
 
-local Tab1 = Win1:Server("Main", "") -- Server/Tab
-local Chann1 = Tab1:Channel("player") -- Channel 0_0
+------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 
-Chann1:Button("Fov", function()
-game.Workspace.CurrentCamera.FieldOfView = 120
-end) -- The Scirpt The Button Executes
 
-Chann1:Button(" Fov reset☢️", function()
-game.Workspace.CurrentCamera.FieldOfView = 80
-end) -- The Scirpt The Button Executes
-
-Chann1:Button("ESP 👁‍🗨", function()
+local Tab1Section = Tab1:NewSection("fix tool")
+Tab1Section:NewButton("esp one click only!","click me", function()
 --// Universal Box ESP (Works on Arsenal and other games)
 
 -- settings
@@ -205,32 +279,242 @@ runService:BindToRenderStep("esp", Enum.RenderPriority.Camera.Value, function()
        end
    end
 end)
-end) -- The Scirpt The Button Executes
+end) 
 
-Chann1:Button("??", function()
+Tab1Section:NewButton("ESP H","esp", function()
+    --[[
+Script: ESP Script
+Details: Nothing much. Its ESP Chams and the different colors are for different teams.
+Creds: www_7V
+]]
+-- -----------------------------------
+-- PRO --
+-- -----------------------------------
+-- -----------------------------------
+								ALLYCOLOR = {0,255,255}  	--//Color of the ESP  of people on the same team
+								ENEMYCOLOR =  {255,0,0} 	--//Color of the ESP  of people on NOT the same team
+								TRANSPARENCY = 20			--//Transparency of the ESP
+								HEALTHBAR_ACTIVATED = true 	--//Renders the Healthbar
+--
+--
 
-end) -- The Scirpt The Button Executes
+--							!!!Don't Change Anything Below Here Unless You Know What You're Doing!!!
 
-Chann1:Button("????", function()
+function createFlex()
+-- -----------------------------------------------------------------------------------
+--[VARIABLES] //Changing may result in Errors!
+players = game:GetService("Players") --//Required for PF
+faces = {"Front","Back","Bottom","Left","Right","Top"} --//Every possible Enum face
+currentPlayer = nil --//Used for the Team-Check
+lplayer = players.LocalPlayer --//The LocalPlayer
+-- -----------------------------------------------------------------------------------
+players.PlayerAdded:Connect(function(p)
+	currentPlayer = p
+		p.CharacterAdded:Connect(function(character) --//For when a new Player joins the game 
+			createESP(character)			
+		end)		
+end)
+-- -----------------------------------------------------------------------------------
+function checkPart(obj)  if (obj:IsA("Part") or obj:IsA("MeshPart")) and obj.Name~="HumanoidRootPart" then return true end end --//Check if the Part is suitable 
+-- -----------------------------------------------------------------------------------
+function actualESP(obj) 
+	
+	for i=0,5 do
+		surface = Instance.new("SurfaceGui",obj) --//Creates the SurfaceGui
+		surface.Face = Enum.NormalId[faces[i+1]] --//Adjusts the Face and chooses from the face table
+		surface.AlwaysOnTop = true
 
-end) -- The Scirpt The Button Executes
+		frame = Instance.new("Frame",surface)	--//Creates the viewable Frame
+		frame.Size = UDim2.new(1,0,1,0)
+		frame.BorderSizePixel = 0												
+		frame.BackgroundTransparency = TRANSPARENCY
+			if currentPlayer.Team == players.LocalPlayer.Team then --//Checks the Players Team
+					frame.BackgroundColor3 = Color3.new(ALLYCOLOR[1],ALLYCOLOR[2],ALLYCOLOR[3])	--//If in same Team											
+			else
+				frame.BackgroundColor3 = Color3.new(ENEMYCOLOR[1],ENEMYCOLOR[2],ENEMYCOLOR[3])	--//If in another Team
+			end
+															
+	end
+end
+-- -----------------------------------------------------------------------------------
+function createHealthbar(hrp) 
+	board =Instance.new("BillboardGui",hrp) --//Creates the BillboardGui with HumanoidRootPart as the Parent
+	board.Name = "total"
+	board.Size = UDim2.new(1,0,1,0)
+	board.StudsOffset = Vector3.new(3,1,0)
+	board.AlwaysOnTop = true
 
-chann1:button("??", function()
+	bar = Instance.new("Frame",board) --//Creates the red background
+	bar.BackgroundColor3 = Color3.new(255,0,0)
+	bar.BorderSizePixel = 0
+	bar.Size = UDim2.new(0.2,0,4,0)
+	bar.Name = "total2"
+												
+	health = Instance.new("Frame",bar) --//Creates the changing green Frame
+	health.BackgroundColor3 = Color3.new(0,255,0)
+	health.BorderSizePixel = 0
+	health.Size = UDim2.new(1,0,hrp.Parent.Humanoid.Health/100,0)
+		hrp.Parent.Humanoid.Changed:Connect(function(property) --//Triggers when any Property changed
+			hrp.total.total2.Frame.Size = UDim2.new(1,0,hrp.Parent.Humanoid.Health/100,0) --//Adjusts the size of the green Frame								
+		end)
+end
+-- -----------------------------------------------------------------------------------
+function createESP(c) --//Checks and calls the proper function
+	bugfix = c:WaitForChild("Head") --// *Used so the children of the character arent nil.
+	for i,v in pairs(c:GetChildren()) do
+		if checkPart(v) then
+		actualESP(v)
+		end
+	end
+	if HEALTHBAR_ACTIVATED then --//If the user decided to
+		createHealthbar(c:WaitForChild("HumanoidRootPart")) --//Calls the function of the creation
+	end
+end
+-- -----------------------------------------------------------------------------------
+for i,people in pairs(players:GetChildren())do
+	if people ~= players.LocalPlayer then
+		currentPlayer = people
+																--//Used for Players already in the Game
+		createESP(people.Character)
+			people.CharacterAdded:Connect(function(character)
+				createESP(character)			
+			end)
+	end
+end
+-- -----------------------------------------------------------------------------------
+end --//End of the entire function
 
-end) -- the scirpt the button executes
+createFlex() --// Does exactly that :)
+end) 
 
-local Chann1 = Tab1:Channel("anti and more☢️")
-Chann1:Button("anti report🔰", function()
- --setting--
-end) -- The Scirpt The Button Executes
 
-Chann1:Button("auto jump", function()
-while true do wait(1)
-game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping") end
+Tab1Section:NewToggle("fix lag", "Changes setting ", function(state)
+    if state then
+        local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = false
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
+end
+for i, e in pairs(l:GetChildren()) do
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+    else
+        local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = false
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
+end
+for i, e in pairs(l:GetChildren()) do
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+    end
+end)
 
-end) -- The Scirpt The Button Executes
+Tab1Section:NewButton("click me for show fps", "working all", function()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/littlegui/main/FPS-Counter'))()
+end) 
 
-Chann1:Button("auto click tool? ", function()
+Tab1Section:NewButton("brightness", "brightness", function()
+   local Light = game:GetService("Lighting")
+
+function dofullbright()
+Light.Ambient = Color3.new(1, 1, 1)
+Light.ColorShift_Bottom = Color3.new(1, 1, 1)
+Light.ColorShift_Top = Color3.new(1, 1, 1)
+end
+
+dofullbright()
+
+Light.LightingChanged:Connect(dofullbright)
+   end)
+
+local Tab1Section = Tab1:NewSection("usefull")
+
+Tab1Section:NewButton("hitbox","dont copy LOL", function()
+    _G.HeadSize = 5
+_G.Disabled = true
+
+game:GetService('RunService').RenderStepped:connect(function()
+if _G.Disabled then
+for i,v in next, game:GetService('Players'):GetPlayers() do
+if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+pcall(function()
+v.Character.HumanoidRootPart.Size = Vector3.new(_G.HeadSize,_G.HeadSize,_G.HeadSize)
+v.Character.HumanoidRootPart.Transparency = 0.7
+v.Character.HumanoidRootPart.BrickColor = BrickColor.new("Really black")
+v.Character.HumanoidRootPart.Material = "Neon"
+v.Character.HumanoidRootPart.CanCollide = false
+end)
+end
+end
+end
+end)
+end) 
+
+Tab1Section:NewButton("shift lock","lock", function()
+    loadstring(game:HttpGet('https://pastebin.com/raw/WQ9NPeDS'))();
+end) 
+
+Tab1Section:NewButton("auto click","support all game?", function()
+
 --// Setting \--
 local range = 99e9
 
@@ -255,5 +539,362 @@ game:GetService("RunService").RenderStepped:Connect(function()
         end
     end
 end)
-end) -- The Scirpt The Button Executes
+end) 
+local Tab1Section = Tab1:NewSection("soon dont click any")
+Tab1Section:NewButton("safe ","need you reset to stop", function()
+    while true do wait(3)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-248,195,292)
+end
+end)
 
+
+
+--Hub--
+local Tab1 = Window:NewTab("HUB Troll")
+local Tab1Section = Tab1:NewSection("HUB")
+
+Tab1Section:NewButton("walk wall Fe","FE", function()
+ local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
+wait(0.9) 
+CoreGui:SetCore("SendNotification", {
+    -- Customizable
+    Title = "made by vv20xx",
+    Text = ".....",
+    Duration = 14, -- Set the duration to how much you want this to stay
+    -- More code in part 2
+})
+    loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
+end) 
+
+Tab1Section:NewButton("FLING","hi", function()
+    power = 500 -- change this to make it more or less powerful
+
+game:GetService('RunService').Stepped:connect(function()
+game.Players.LocalPlayer.Character.Head.CanCollide = false
+game.Players.LocalPlayer.Character.UpperTorso.CanCollide = false
+game.Players.LocalPlayer.Character.LowerTorso.CanCollide = false
+game.Players.LocalPlayer.Character.HumanoidRootPart.CanCollide = false
+end)
+wait(.1)
+local bambam = Instance.new("BodyThrust")
+bambam.Parent = game.Players.LocalPlayer.Character.HumanoidRootPart
+bambam.Force = Vector3.new(power,0,power)
+bambam.Location = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+end) 
+
+Tab1Section:NewButton("tall","tall", function()
+    local LocalPlayer = game:GetService("Players").LocalPlayer
+local Character = LocalPlayer.Character
+local Humanoid = Character:FindFirstChildOfClass("Humanoid")
+
+function rm()
+	for i,v in pairs(Character:GetDescendants()) do
+		if v:IsA("BasePart") then
+			if v.Name == "Handle" or v.Name == "Head" then
+				if Character.Head:FindFirstChild("OriginalSize") then
+					Character.Head.OriginalSize:Destroy()
+				end
+			else
+				for i,cav in pairs(v:GetDescendants()) do
+					if cav:IsA("Attachment") then
+						if cav:FindFirstChild("OriginalPosition") then
+							cav.OriginalPosition:Destroy()  
+						end
+					end
+				end
+				v:FindFirstChild("OriginalSize"):Destroy()
+				if v:FindFirstChild("AvatarPartScaleType") then
+					v:FindFirstChild("AvatarPartScaleType"):Destroy()
+				end
+			end
+		end
+	end
+end
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyProportionScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyHeightScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyWidthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("BodyDepthScale"):Destroy()
+wait(1)
+
+rm()
+wait(0.5)
+Humanoid:FindFirstChild("HeadScale"):Destroy()
+wait(1)
+end) 
+
+
+
+local Tab1 = Window:NewTab("game")
+local Tab1Section = Tab1:NewSection("game")
+
+
+Tab1Section:NewButton("safe afk to stop reset button ","need you reset to stop", function()
+    while true do wait(0)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-248,195,292)
+end
+end) 
+
+
+local Tab1 = Window:NewTab("RTX")
+local Tab1Section = Tab1:NewSection("RTX Tools")
+
+Tab1Section:NewButton("RTX-1","rtx", function()
+    -- Roblox Graphics Enhancher
+local light = game.Lighting
+for i, v in pairs(light:GetChildren()) do
+	v:Destroy()
+end
+
+local ter = workspace.Terrain
+local color = Instance.new("ColorCorrectionEffect")
+local bloom = Instance.new("BloomEffect")
+local sun = Instance.new("SunRaysEffect")
+local blur = Instance.new("BlurEffect")
+
+color.Parent = light
+bloom.Parent = light
+sun.Parent = light
+blur.Parent = light
+
+-- enable or disable shit
+
+local config = {
+
+	Terrain = true;
+	ColorCorrection = true;
+	Sun = true;
+	Lighting = true;
+	BloomEffect = true;
+	
+}
+
+-- settings {
+
+color.Enabled = false
+color.Contrast = 0.15
+color.Brightness = 0.1
+color.Saturation = 0.25
+color.TintColor = Color3.fromRGB(255, 222, 211)
+
+bloom.Enabled = false
+bloom.Intensity = 0.1
+
+sun.Enabled = false
+sun.Intensity = 0.2
+sun.Spread = 1
+
+bloom.Enabled = false
+bloom.Intensity = 0.05
+bloom.Size = 32
+bloom.Threshold = 1
+
+blur.Enabled = false
+blur.Size = 6
+
+-- settings }
+
+
+if config.ColorCorrection then
+	color.Enabled = true
+end
+
+
+if config.Sun then
+	sun.Enabled = true
+end
+
+
+if config.Terrain then
+	-- settings {
+	ter.WaterColor = Color3.fromRGB(10, 10, 24)
+	ter.WaterWaveSize = 0.1
+	ter.WaterWaveSpeed = 22
+	ter.WaterTransparency = 0.9
+	ter.WaterReflectance = 0.05
+	-- settings }
+end
+
+
+if config.Lighting then
+	-- settings {
+	light.Ambient = Color3.fromRGB(0, 0, 0)
+	light.Brightness = 4
+	light.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+	light.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+	light.ExposureCompensation = 0
+	light.FogColor = Color3.fromRGB(132, 132, 132)
+	light.GlobalShadows = true
+	light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+	light.Outlines = false
+	-- settings }
+end
+
+end) 
+
+Tab1Section:NewButton("RTX-2","rtx", function()
+    local light = game.Lighting
+for i, v in pairs(light:GetChildren()) do
+	v:Destroy()
+end
+
+local ter = workspace.Terrain
+local color = Instance.new("ColorCorrectionEffect")
+local bloom = Instance.new("BloomEffect")
+local sun = Instance.new("SunRaysEffect")
+local blur = Instance.new("BlurEffect")
+
+color.Parent = light
+bloom.Parent = light
+sun.Parent = light
+blur.Parent = light
+
+
+local config = {
+
+	Terrain = true;
+	ColorCorrection = true;
+	Sun = true;
+	Lighting = true;
+	BloomEffect = true;
+	
+}
+
+
+color.Enabled = true
+color.Contrast = 0.15
+color.Brightness = 0.1
+color.Saturation = 0.2
+color.TintColor = Color3.fromRGB(255, 222, 211)
+
+bloom.Enabled = true
+bloom.Intensity = 0.3
+
+sun.Enabled = true
+sun.Intensity = 1
+sun.Spread = 5
+
+bloom.Enabled = true
+bloom.Intensity = 0.05
+bloom.Size = 32
+bloom.Threshold = 1
+
+blur.Enabled = true
+blur.Size = 2
+
+
+
+if config.ColorCorrection then
+	color.Enabled = true
+end
+
+
+if config.Sun then
+	sun.Enabled = true
+end
+
+
+if config.Terrain then
+	ter.WaterColor = Color3.fromRGB(10, 10, 24)
+	ter.WaterWaveSize = 0.1
+	ter.WaterWaveSpeed = 22
+	ter.WaterTransparency = 0.9
+	ter.WaterReflectance = 0.05
+end
+
+
+if config.Lighting then
+	light.Ambient = Color3.fromRGB(120, 31, 42)
+	light.Brightness = 3.5
+	light.ColorShift_Bottom = Color3.fromRGB(12, 31, 42)
+	light.ColorShift_Top = Color3.fromRGB(12, 31, 42)
+	light.ExposureCompensation = 0
+	light.FogColor = Color3.fromRGB(132, 132, 132)
+	light.GlobalShadows = true
+	light.OutdoorAmbient = Color3.fromRGB(112, 117, 128)
+	light.Outlines = true
+end
+end) 
+
+Tab1Section:NewButton("RTX","rtx", function()
+    
+end) 
+
+local Tab1 = Window:NewTab("animation FREE")
+local Tab1Section = Tab1:NewSection("perm")
+
+Tab1Section:NewButton("delete animation? and reset","reset", function()
+   game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid").Health = 0
+game:GetService("Players").LocalPlayer.CharacterAdded:Connect(function()
+    Instance.new("Folder",game:GetService("Players").LocalPlayer.Character).Name = ("FULLY_LOADED_CHAR")
+    game:GetService("Players").LocalPlayer.Character:WaitForChild("BodyEffects"):WaitForChild("Dead"):Remove()
+    Instance.new("BoolValue",game:GetService("Players").LocalPlayer.Character:WaitForChild("BodyEffects")).Name = ("Dead")
+    repeat wait() until game:GetService("Players").LocalPlayer.Character:WaitForChild("BodyEffects"):findFirstChild("Dead")
+    game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid"):WaitForChild("BodyWidthScale").Value = 0.5
+    game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid"):WaitForChild("HeadScale").Value = 1
+    game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid"):WaitForChild("BodyHeightScale").Value = 1
+    game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid"):WaitForChild("BodyDepthScale").Value = 0.5
+    game:GetService("Players").LocalPlayer.Character:WaitForChild("Humanoid"):WaitForChild("BodyTypeScale").Value = 0.01
+end) 
+end)
+
+Tab1Section:NewButton("zombie","hi", function()
+    while true do
+local Animate = game.Players.LocalPlayer.Character.Animate
+Animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.idle.Animation2.AnimationId = "http://www.roblox.com/asset/?id=782841498"
+Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=616168032"
+Animate.run.RunAnim.AnimationId = "http://www.roblox.com/asset/?id=616163682"
+Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=1083218792"
+Animate.climb.ClimbAnim.AnimationId = "http://www.roblox.com/asset/?id=1083439238"
+Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=707829716"
+game.Players.LocalPlayer.Character.Humanoid.Jump = false
+wait(1)
+end
+end)
+--new
+
+local Tab1 = Window:NewTab("new")
+local Tab1Section = Tab1:NewSection("new")
+
+Tab1Section:NewToggle("auto pickup item", "click more to stop", function(state)
+    if state then
+        --auto pickup
+_G.on = true --false to turn off and true to turn on
+while _G.on do
+wait(1) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
+    else
+        --auto pickup
+_G.on = false --false to turn off and true to turn on
+while _G.on do
+wait(1) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
+    end
+end)
