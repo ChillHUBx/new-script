@@ -183,9 +183,9 @@ Chann1:Button("????", function()
 
 end) -- The Scirpt The Button Executes
 
-Chann1:Button("??", function()
+chann1:button("??", function()
 
-end) -- The Scirpt The Button Executes
+end) -- the scirpt the button executes
 
 local Chann1 = Tab1:Channel("anti and more☢️")
 Chann1:Button("anti report🔰", function()
@@ -226,3 +226,36 @@ end)
 end) -- The Scirpt The Button Executes
 
 Chann1:Label("chillhubx.") -- A Label (Ofc)
+
+local Chann1 = Tab1:Channel("auto pickup item") -- Channel 0_0
+
+chann1:button("on", function()
+--auto pickup
+_G.on = true --false to turn off and true to turn on
+while _G.on do
+wait(1) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
+end) -- the scirpt the button executes
+
+--main--
+
+chann1:button("off", function()
+--auto pickup
+_G.on = false --false to turn off and true to turn on
+while _G.on do
+wait(1) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
+end) -- the scirpt the button executes
+
