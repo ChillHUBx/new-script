@@ -35,7 +35,7 @@ print("System.Script it's working no update to day")
 
 
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Chill(Hub)","Synapse")
+local Window = Library.CreateLib("Chill(Hubx)","Synapse")
 
 -- Tabs
 local Tab1 = Window:NewTab("Home")
@@ -871,12 +871,12 @@ end)
 local Tab1 = Window:NewTab("new")
 local Tab1Section = Tab1:NewSection("new")
 
-Tab1Section:NewToggle("auto pickup item", "click more to stop", function(state)
+Tab1Section:NewToggle("auto pickup item ?", "click more to stop", function(state)
     if state then
         --auto pickup
 _G.on = true --false to turn off and true to turn on
 while _G.on do
-wait(1) -- you can change the delay here
+wait(4) -- you can change the delay here
 char = game:GetService('Players').LocalPlayer.Character
 game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
 char = body end)
@@ -888,7 +888,7 @@ end
         --auto pickup
 _G.on = false --false to turn off and true to turn on
 while _G.on do
-wait(1) -- you can change the delay here
+wait(0.4) -- you can change the delay here
 char = game:GetService('Players').LocalPlayer.Character
 game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
 char = body end)
