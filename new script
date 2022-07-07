@@ -225,8 +225,7 @@ game:GetService("RunService").RenderStepped:Connect(function()
 end)
 end) -- The Scirpt The Button Executes
 
-local Tab1 = Win1:Server("auto pickup? ", "") -- Server/Tab
-local Chann1 = Tab1:Channel("auto pickup item") -- Channel 0_0
+local Chann1 = Tab1:Channel("auto pickup") -- Channel 0_0
 
 chann1:button("on", function()
 --auto pickup
