@@ -38,6 +38,38 @@ local Win1 = DiscordLib:Window("ChillHUBx") -- Title/Name
 
 local Tab1 = Win1:Server("HOME", "") -- Server/Tab
 
+local Chann1 = Tab1:Channel("auto pickup") -- Channel 0_0
+
+chann1:button("on", function()
+--auto pickup
+_G.on = true --false to turn off and true to turn on
+while _G.on do
+wait(1) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
+end) -- the scirpt the button executes
+
+--main--
+
+chann1:button("off", function()
+--auto pickup
+_G.on = false --false to turn off and true to turn on
+while _G.on do
+wait(1) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
+end) -- the scirpt the button executes
+
 local Chann1 = Tab1:Channel("Channel(1)") -- Channel 0_0
 
 Chann1:Button("jump infi", function()
@@ -224,36 +256,4 @@ game:GetService("RunService").RenderStepped:Connect(function()
     end
 end)
 end) -- The Scirpt The Button Executes
-
-local Chann1 = Tab1:Channel("auto pickup") -- Channel 0_0
-
-chann1:button("on", function()
---auto pickup
-_G.on = true --false to turn off and true to turn on
-while _G.on do
-wait(1) -- you can change the delay here
-char = game:GetService('Players').LocalPlayer.Character
-game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
-char = body end)
-for i,v in pairs(workspace:GetDescendants()) do
-if v:IsA('Tool') then
-char.Humanoid:EquipTool(v) end end
-end
-end) -- the scirpt the button executes
-
---main--
-
-chann1:button("off", function()
---auto pickup
-_G.on = false --false to turn off and true to turn on
-while _G.on do
-wait(1) -- you can change the delay here
-char = game:GetService('Players').LocalPlayer.Character
-game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
-char = body end)
-for i,v in pairs(workspace:GetDescendants()) do
-if v:IsA('Tool') then
-char.Humanoid:EquipTool(v) end end
-end
-end) -- the scirpt the button executes
 
