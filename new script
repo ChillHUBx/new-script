@@ -3,8 +3,8 @@ wait(0.9)
 CoreGui:SetCore("SendNotification", {
     -- Customizable
     Title = "System🔄",
-    Text = "10.2.0",
-    Duration = 19, -- Set the duration to how much you want this to stay
+    Text = "10.5.0",
+    Duration = 17, -- Set the duration to how much you want this to stay
     -- More code in part 2
 })
 
@@ -14,16 +14,16 @@ local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
 wait(0.9) 
 CoreGui:SetCore("SendNotification", {
     -- Customizable
-    Title = "script it's Done",
-    Text = "script loading wait 2",
-    Duration = 10, -- Set the duration to how much you want this to stay
+    Title = "System",
+    Text = "type /console",
+    Duration = 15, -- Set the duration to how much you want this to stay
     -- More code in part 2
 })
 
 Wait(2)
 print("👑 Wellcome to the script")
-print("🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳") 
-print("🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳")
+print("the script it's back!") 
+print("script fix")
 print("🔳🔳🔳🔳🔳🔳🔳🔳🔳🔳")
 print("🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩") 
 print("🟩🟩🟩🟩🟩🟩🟩🟩🟩🟩")
