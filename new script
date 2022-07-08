@@ -19,16 +19,15 @@ MainSection:CreateButton("Click Me!", function()
    print("Boo!")    
 end)
 
-MainSection:CreateLabel("Namey", "Hello!")
+MainSection:CreateLabel("Namey", "NEW version 👑 10.10.0")
+MainSection:CreateLabel("Namey", Own the script VV20XX👑")
+MainSection:CreateLabel("Namey", Support Mobile 👑")
 
-MainSection:CreateToggle("Aimbot", function(boolean)
-   print("Aimbot:", boolean)
-end)
-
-MainSection:CreateSlider("Field Of View", 0, 150, 50, false, function(value)
-   print("Field of View: " .. value)
-end)
-
+ 
+ 
+ 
+ 
+ -----hi---
 ConfigSection:CreateColorPicker("Field of View Color", Color3.fromRGB(255, 255, 255), function(color)
    print("Field Of View Color:", color)
 end)
@@ -118,3 +117,10 @@ SettingSection:CreateButton("shift lock", function()
    game.Workspace.CurrentCamera.FieldOfView = 80
 end)
 
+
+
+--RTX--
+
+RTXSection:CreateButton("shift lock", function()
+   game.Workspace.CurrentCamera.FieldOfView = 80
+end)
