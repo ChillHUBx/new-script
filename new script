@@ -20,8 +20,8 @@ MainSection:CreateButton("Click Me!", function()
 end)
 
 MainSection:CreateLabel("Namey", "NEW version 👑 10.10.0")
-MainSection:CreateLabel("Namey", Own the script VV20XX👑")
-MainSection:CreateLabel("Namey", Support Mobile 👑")
+MainSection:CreateLabel("Namey", "Own the script VV20XX👑")
+MainSection:CreateLabel("Namey", "Support Mobile 👑")
 
  
  
