@@ -182,7 +182,7 @@ local ChillHubTab = CoastingLibrary:CreateTab("HUB")
 local HUBSection = ChillHubTab:CreateSection("HUB")
 
 HUBSection:CreateButton("Walk wall FE", function()
-   game.Workspace.CurrentCamera.FieldOfView = 80
+   loadstring(game:HttpGet("https://pastebin.com/raw/zXk4Rq2r"))()
 end)
 
 HUBSection:CreateButton("Tall? ", function()
