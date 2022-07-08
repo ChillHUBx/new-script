@@ -47,8 +47,8 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
 end)
 --more--
 local ChillHubTab = CoastingLibrary:CreateTab("Main")
-local MainSection = ChillBuhTab:CreateSection("Main")
-local PlayerSection = AimbotTab:CreateSection("Player") 
+local MainSection = ChillHubTab:CreateSection("Main")
+local PlayerSection = ChillHubTab:CreateSection("Player") 
 --main--
 MainSection:CreateButton("ESP", function()
     print("hi")    
