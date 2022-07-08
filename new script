@@ -469,7 +469,9 @@ end)
 
 
 
---Hub--
+--here---
+
+--Hub---
 local Tab1 = Window:NewTab("HUB Troll")
 local Tab1Section = Tab1:NewSection("HUB")
 
@@ -851,3 +853,8 @@ Tab1Section:NewButton("Kick","kick", function()
 
 player:Kick("reason you click") 
 end) 
+
+--System and setting--
+
+local Tab1 = Window:NewTab("System/setting")
+local Tab1Section = Tab1:NewSection("🔴🟠🟡")
