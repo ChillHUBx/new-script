@@ -3,7 +3,7 @@ wait(0.9)
 CoreGui:SetCore("SendNotification", {
     -- Customizable
     Title = "System☢️",
-    Text = "10.10.0",
+    Text = "10.11.0",
     Duration = 19, -- Set the duration to how much you want this to stay
     -- More code in part 2
 })
@@ -92,7 +92,7 @@ end)
 
 --player---------------------
 
-PlayerSection:CreateButton("infiJump", function()
+PlayerSection:CreateButton("infi jump", function()
      local InfiniteJumpEnabled = true
 game:GetService("UserInputService").JumpRequest:connect(function()
 	if InfiniteJumpEnabled then
@@ -110,8 +110,7 @@ PlayerSection:CreateButton("Fov reset ♻️", function()
 end)
 
 PlayerSection:CreateButton("/spy", function()
-      
-end)--This script reveals ALL hidden messages in the default chat
+ --This script reveals ALL hidden messages in the default chat
 --chat "/spy" to toggle!
 enabled = true
 --if true will check your messages too
@@ -176,7 +175,6 @@ local chatFrame = player.PlayerGui.Chat.Frame
 chatFrame.ChatChannelParentFrame.Visible = true
 chatFrame.ChatBarParentFrame.Position = chatFrame.ChatChannelParentFrame.Position+UDim2.new(UDim.new(),chatFrame.ChatChannelParentFrame.Size.Y)
 end)
-
 
 --end--
 
