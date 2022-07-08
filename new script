@@ -923,3 +923,10 @@ end
 bypass_teleport(teleport_table.location1)
 end) 
 
+local Tab1Section = Tab1:NewSection("fast kick")
+
+Tab1Section:NewButton("Kick","kick", function()
+    local player=game.Players.LocalPlayer
+
+player:Kick("reason you click") 
+end) 
