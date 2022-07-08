@@ -1,23 +1,22 @@
-local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
-wait(0.9) 
-CoreGui:SetCore("SendNotification", {
-    -- Customizable
-    Title = "System⚠️",
-    Text = "10.6.0",
-    Duration = 17, -- Set the duration to how much you want this to stay
-    -- More code in part 2
-})
+ local function callback(Text)
+ if Text == "yes" then
+  print ("Answer")
+elseif Text == ("no") then
+ print ("Answer2")
+ end
+end
 
-Wait(2)
-
-local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
-wait(0.9) 
-CoreGui:SetCore("SendNotification", {
-    -- Customizable
-    Title = "System",
-    Text = "type /console",
-    Duration = 15, -- Set the duration to how much you want this to stay
-    -- More code in part 2
+local NotificationBindable = Instance.new("BindableFunction")
+NotificationBindable.OnInvoke = callback
+--
+game.StarterGui:SetCore("SendNotification",  {
+ Title = "System☢️";
+ Text = "10.9.0";
+ Icon = "http://www.roblox.com/asset/?id=0";
+ Duration = 7;
+ Button1 = "yes";
+ Button2 = "no";
+ Callback = NotificationBindable;
 })
 
 Wait(2)
