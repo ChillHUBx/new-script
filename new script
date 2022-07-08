@@ -34,7 +34,7 @@ print("System.Script it's working no update to day")
 
 
 local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("Chill(Hubx)","Synapse")
+local Window = Library.CreateLib("Chill(Hubx)--🔴🟠🟡","Ocean")
 
 -- Tabs
 local Tab1 = Window:NewTab("Home")
