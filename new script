@@ -51,7 +51,7 @@ local MainSection = ChillBuhTab:CreateSection("Main")
 local PlayerSection = AimbotTab:CreateSection("Player") 
 --main--
 MainSection:CreateButton("ESP", function()
-       
+    print("hi")    
 end)
 
 MainSection:CreateButton("double Jump", function()
