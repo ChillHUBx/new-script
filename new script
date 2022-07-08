@@ -11,9 +11,9 @@ CoreGui:SetCore("SendNotification", {
 
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
-local chillhubTab = CoastingLibrary:CreateTab("HOME")
-local MainSection = chillhubTab:CreateSection("Main")
-local ConfigSection = chillhubTab:CreateSection("Config")
+local ChillHubTab = CoastingLibrary:CreateTab("HOME")
+local MainSection = ChillHubTab:CreateSection("Main")
+local ConfigSection = ChillHubTab:CreateSection("Config")
 
 MainSection:CreateButton("anti report", function()
    print("Boo!") 
@@ -46,16 +46,16 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
    print("Aimbot Active:", boolean)
 end)
 --more--
-local AimbotTab = CoastingLibrary:CreateTab("Main")
-local MainSection = AimbotTab:CreateSection("Main")
+local ChillHubTab = CoastingLibrary:CreateTab("Main")
+local MainSection = ChillBuhTab:CreateSection("Main")
 local PlayerSection = AimbotTab:CreateSection("Player") 
 --main--
-MainSection:CreateButton("infiJump", function()
-   print("Boo!")    
+MainSection:CreateButton("ESP", function()
+       
 end)
 
-MainSection:CreateButton("infiJump", function()
-   print("Boo!")    
+MainSection:CreateButton("double Jump", function()
+game.Players.LocalPlayer.Character.Humanoid:Clone().Parent = game.Players.LocalPlayer.Character
 end)
 
 MainSection:CreateButton("infiJump", function()
@@ -178,8 +178,8 @@ end)
 
 --end--
 
-local chillhubTab = CoastingLibrary:CreateTab("HUB")
-local HUBSection = chillhubTab:CreateSection("HUB")
+local ChillHubTab = CoastingLibrary:CreateTab("HUB")
+local HUBSection = ChillHubTab:CreateSection("HUB")
 
 HUBSection:CreateButton("Walk wall FE", function()
    game.Workspace.CurrentCamera.FieldOfView = 80
