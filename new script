@@ -15,15 +15,21 @@ local AimbotTab = CoastingLibrary:CreateTab("HOME")
 local MainSection = AimbotTab:CreateSection("Main")
 local ConfigSection = AimbotTab:CreateSection("Config")
 
-MainSection:CreateButton("Click Me!", function()
-   print("Boo!")    
+MainSection:CreateButton("anti report", function()
+   print("Boo!") 
+end)
+
+MainSection:CreateButton("bypass ♻️", function()
+   print("Boo!") 
 end)
 
 MainSection:CreateLabel("Namey", "NEW version 👑 10.10.0")
 MainSection:CreateLabel("Namey", "Own the script VV20XX👑")
 MainSection:CreateLabel("Namey", "Support Mobile 👑")
 
- 
+ MainSection:CreateButton("infinite ye ", function()
+   
+end)
  
  
  
@@ -105,22 +111,20 @@ end)
 
 --end--
 
-local AimbotTab = CoastingLibrary:CreateTab("Setting")
-local MainSection = AimbotTab:CreateSection("Setting")
-local RTXSection = AimbotTab:CreateSection("RTX") 
+local AimbotTab = CoastingLibrary:CreateTab("HUB")
+local HUBSection = AimbotTab:CreateSection("HUB")
 
-SettingSection:CreateButton("fix lag", function()
+HUBSection:CreateButton("Walk wall FE", function()
    game.Workspace.CurrentCamera.FieldOfView = 80
 end)
 
-SettingSection:CreateButton("shift lock", function()
+HUBSection:CreateButton("Tall? ", function()
    game.Workspace.CurrentCamera.FieldOfView = 80
 end)
 
 
 
---RTX--
 
-RTXSection:CreateButton("shift lock", function()
+HUBSection:CreateButton("soon", function()
    game.Workspace.CurrentCamera.FieldOfView = 80
 end)
