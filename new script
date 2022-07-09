@@ -494,3 +494,10 @@ end)
 HUBSection:CreateButton("soon", function()
    game.Workspace.CurrentCamera.FieldOfView = 80
 end)
+
+
+
+---animation---
+
+local ChillHubTab = CoastingLibrary:CreateTab("ANIMAIN")
+local MainSection = ChillHubTab:CreateSection("animation")
