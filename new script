@@ -408,6 +408,11 @@ PlayerSection:CreateButton("Fov reset ♻️", function()
    game.Workspace.CurrentCamera.FieldOfView = 80
 end)
 
+PlayerSection:CreateButton("RESET", function()
+   game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+
 PlayerSection:CreateButton("/spy", function()
  --This script reveals ALL hidden messages in the default chat
 --chat "/spy" to toggle!
