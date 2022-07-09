@@ -501,3 +501,8 @@ end)
 
 local ChillHubTab = CoastingLibrary:CreateTab("ANIMAIN")
 local MainSection = ChillHubTab:CreateSection("animation")
+
+
+ChillHubSection:CreateButton("zombie", function()
+   game.Workspace.CurrentCamera.FieldOfView = 80
+end)
