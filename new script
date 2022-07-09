@@ -19,13 +19,45 @@ MainSection:CreateButton("anti report", function()
    print("Boo!") 
 end)
 
-MainSection:CreateButton("Anti-Cheat Bypass ", function()
-   local vu = game:GetService("VirtualUser")
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-   vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-   wait(1)
-   vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-end) 
+MainSection:CreateButton("Anti-Kick", function()
+--// Variables
+
+local Players = game:GetService("Players")
+local OldNameCall = nil
+
+--// Global Variables
+
+getgenv().SendNotifications = true -- Set to true if you want to get notified regularly.
+
+--// Anti Kick Hook
+
+OldNameCall = hookmetamethod(game, "__namecall", function(Self, ...)
+    local NameCallMethod = getnamecallmethod()
+
+    if tostring(string.lower(NameCallMethod)) == "kick" then
+        if getgenv().SendNotifications == true then
+            game:GetService("StarterGui"):SetCore("SendNotification", {
+                Title = "Exunys Developer",
+                Text = "You almost got kicked! Successfully prevented.",
+                Icon = "rbxassetid://6238540373",
+                Duration = 3,
+            })
+        end
+        
+        return nil
+    end
+    
+    return OldNameCall(Self, ...)
+end)
+
+if getgenv().SendNotifications == true then
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "active",
+        Text = "Anti-Kick script loaded",
+        Icon = "rbxassetid://6238537240",
+        Duration = 5,
+    })
+end
 end)
 --------------end------
 MainSection:CreateLabel("Namey", "NEW version 👑 V2")
