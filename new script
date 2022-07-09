@@ -13,7 +13,7 @@ local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQta
 
 local ChillHubTab = CoastingLibrary:CreateTab("HOME")
 local MainSection = ChillHubTab:CreateSection("Main")
-local ConfigSection = ChillHubTab:CreateSection("Config")
+local aboutSection = ChillHubTab:CreateSection("about")
 
 MainSection:CreateButton("anti report", function()
    print("Boo!") 
@@ -71,15 +71,15 @@ end)
  
  
  -----hi---
-ConfigSection:CreateColorPicker("Field of View Color", Color3.fromRGB(255, 255, 255), function(color)
+aboutSection:CreateColorPicker("Field of View Color", Color3.fromRGB(255, 255, 255), function(color)
    print("Field Of View Color:", color)
 end)
 
-ConfigSection:CreateDropdown("Type", {"Mouse", "Character"}, 1, function(option)
+aboutSection:CreateDropdown("Type", {"Mouse", "Character"}, 1, function(option)
    print("Type: " .. option)
 end)
 
-ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
+aboutSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
    print("Aimbot Active:", boolean)
 end)
 --more--
