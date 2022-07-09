@@ -500,8 +500,7 @@ end)
 ---animation---
 
 local ChillHubTab = CoastingLibrary:CreateTab("ANIMAIN")
-local MainSection = ChillHubTab:CreateSection("animation")
-
+local MainSection = ChillHubTab:CreateSection("free")
 
 ChillHubSection:CreateButton("zombie", function()
    while true do
