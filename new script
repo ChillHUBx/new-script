@@ -34,9 +34,7 @@ print(t)
 end)
 
 tab:Button("ESP", "This function may not work sometimes and you can get banned.", function()
-Flux:Notification("ESP all players successfully!", "Alright")
-
-----ESP----
+----E
 
 local esp_settings = { ---- table for esp settings 
     textsize = 8,
