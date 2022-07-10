@@ -33,6 +33,15 @@ tab:Colorpicker("ESP Color", Color3.fromRGB(255,1,1), function(t)
 print(t)
 end)
 
+tab:Button("ESP", "This function may not work sometimes and you can get banned.", function()
+Flux:Notification("Killed all players successfully!", "Alright")
+end)
+
+
+tab:Button("Reset, "This function may not work sometimes and you can get banned.", function()
+Flux:Notification("reset players successfully!", "Alright")
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
 
 ----more---
 
