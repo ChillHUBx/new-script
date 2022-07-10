@@ -1,42 +1,51 @@
-local HUBLib = loadstring(game:HttpGet("https://pastebin.com/raw/LpnU0THx"))()
+local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
+local Window = Library.CreateLib("CHill🟧HUB", "Ocean")
 
-local window = HUBLib:CreateWindow()
-local main = window:CreateTab("main", "Main", "Your mom") -- framename, threadname, author
+-- Tabs
 
-local anotherTab = window:CreateTab("another", "Misc", "Your dad")
+local Tab1 = Window:NewTab("Main/game")
+local Tab1Section = Tab1:NewSection("Main/game")
 
-anotherTab:CreateButton("Leave", function()  -- buttonname, callback
-    game.Players.LocalPlayer:Kick()    
+-- Buttons/Windows/Idk
+
+Tab1Section:NewButton("Inf Jumps", "Enables Inf Jumps", function()
+    local InfiniteJumpEnabled = true
+game:GetService("UserInputService").JumpRequest:connect(function()
+	if InfiniteJumpEnabled then
+		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
+	end
+end)
 end)
 
-main:CreateButton("Die", function()  -- buttonname, callback
-game.Players.LocalPlayer.Character.Humanoid.Health = 0
+Tab1Section:NewToggle("Fov", "Changes Fov", function(state)
+    if state then
+        game.Workspace.CurrentCamera.FieldOfView = 120
+    else
+        game.Workspace.CurrentCamera.FieldOfView = 80
+    end
 end)
 
-main:CreateToggle("Speed", function(bool) -- togglename, callback
-if bool then
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
-else
-game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
-end    
+Tab1Section:NewSlider("Speed", "Sussy Speed", 250, 120, function(v)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
 end)
 
+------end----
 
-local dropdown = main:CreateDropdown("Teleports", TPlist, function(option) -- dropdownname, list, callback
-print(option)    
+local Tab1 = Window:NewTab("setting")
+local Tab1Section = Tab1:NewSection("setting")
+
+Tab1Section:NewToggle("auto pickup", "Changes Fov", function(state)
+    if state then
+        game.Workspace.CurrentCamera.FieldOfView = 120
+    else
+        game.Workspace.CurrentCamera.FieldOfView = 80
+    end
 end)
-wait(30)
-TPlist = {"Subway", "Spawn"} -- changes the options in the variable of the list
-dropdown:Refresh(TPlist) -- refresh dropdown with new options
 
---[[
-¿HOW TO REFRESH A DROPDOWN?
-First of all, make ur dropdown a variable, example: local hi = urtab:CreateDropdown("yourmom",{"your dad"}, function(option) print(option) end)
-
-then do hi:Refresh({"new options here"})
-
-¿WHY YOU SHOULD GIVE ME A REP?
-jk
-
-thanks Megami Tensei for the idea
-]]
+Tab1Section:NewToggle("anti cheat", "Changes Fov", function(state)
+    if state then
+        game.Workspace.CurrentCamera.FieldOfView = 120
+    else
+        game.Workspace.CurrentCamera.FieldOfView = 80
+    end
+end)
