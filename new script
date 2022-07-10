@@ -47,7 +47,6 @@ tab:Button("RESET", "This function may not work sometimes and you can get banned
 Flux:Notification("reset players successfully!", "Alright")
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
-end)
 
 ----more---
 
