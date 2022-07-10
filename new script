@@ -43,9 +43,10 @@ print(t)
 end)
 
 
-tab:Button("ESP", "This function may not work sometimes and you can get banned.", function()
-Flux:Notification("Killed all players successfully!", "Alright")
-print("hi") 
+tab:Button("RESET", "This function may not work sometimes and you can get banned.", function()
+Flux:Notification("reset players successfully!", "Alright")
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
 end)
 
 ----more---
