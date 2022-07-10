@@ -36,4 +36,4 @@ end)
 
 ----more---
 
-local tab = win:Tab("MAIN", "http://www.roblox.com/asset/?id=6023426915")
+local tab = win:Tab("Setting", "")
