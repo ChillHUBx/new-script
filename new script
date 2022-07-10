@@ -49,7 +49,7 @@ char.Humanoid:EquipTool(v) end end
 end
     else
         --auto pickup
-_G.on = true --false to turn off and true to turn on
+_G.on = false --false to turn off and true to turn on
 while _G.on do
 wait(3) -- you can change the delay here
 char = game:GetService('Players').LocalPlayer.Character
