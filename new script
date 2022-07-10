@@ -3,7 +3,7 @@ wait(0.9)
 CoreGui:SetCore("SendNotification", {
     -- Customizable
     Title = "System☢️",
-    Text = "V2",
+    Text = "V3",
     Duration = 19, -- Set the duration to how much you want this to stay
     -- More code in part 2
 })
