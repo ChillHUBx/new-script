@@ -6,7 +6,7 @@ local tab = win:Tab("MAIN", "http://www.roblox.com/asset/?id=6023426915")
 tab:Button("Kill all", "This function may not work sometimes and you can get banned.", function()
 Flux:Notification("Killed all players successfully!", "Alright")
 end)
-tab:Label("This is just a label.")
+tab:Label("soon.")
 tab:Line()
 tab:Toggle("Auto-Farm Coins", "Automatically collects coins for you!", function(t)
 print(t)
@@ -46,6 +46,10 @@ end)
 tab:Button("RESET", "This function may not work sometimes and you can get banned.", function()
 Flux:Notification("reset players successfully!", "Alright")
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
+end)
+
+tab:Toggle("Auto-?", "Automatically collects coins for you!", function(t)
+print(t)
 end)
 
 ----more---
