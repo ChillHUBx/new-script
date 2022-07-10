@@ -45,7 +45,8 @@ game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
 char = body end)
 for i,v in pairs(workspace:GetDescendants()) do
 if v:IsA('Tool') then
-char.Humanoid:EquipTool(v) end end
+char.Humanoid:EquipTool(v) 
+end) 
     else
         auto pickup
 _G.on = false --false to turn off and true to turn on
