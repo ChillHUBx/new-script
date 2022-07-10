@@ -42,9 +42,10 @@ tab:Slider("Walkspeed", "Makes your faster.", 0, 100,16,function(t)
 print(t)
 end)
 
-L
+
 tab:Button("ESP", "This function may not work sometimes and you can get banned.", function()
 Flux:Notification("Killed all players successfully!", "Alright")
+print("hi") 
 end)
 
 ----more---
