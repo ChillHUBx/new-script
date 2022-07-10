@@ -1,95 +1,42 @@
-local Flux = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/fluxlib.txt")()
+local HUBLib = loadstring(game:HttpGet("https://pastebin.com/raw/LpnU0THx"))()
 
-local win = Flux:Window("Chill-HUB", "GUI", Color3.fromRGB(255, 110, 48), Enum.KeyCode.LeftControl)
-local tab = win:Tab("MAIN", "http://www.roblox.com/asset/?id=6023426915")
+local window = HUBLib:CreateWindow()
+local main = window:CreateTab("main", "Main", "Your mom") -- framename, threadname, author
 
-tab:Button("Kill all", "This function may not work sometimes and you can get banned.", function()
-Flux:Notification("Killed all players successfully!", "Alright")
-end)
-tab:Label("soon.")
-tab:Line()
-tab:Toggle("Auto-Farm Coins", "Automatically collects coins for you!", function(t)
-print(t)
-end)
-tab:Slider("Walkspeed", "Makes your faster.", 0, 100,16,function(t)
-print(t)
-end)
-tab:Dropdown("Part to aim at", {"Torso","Head","Penis"}, function(t)
-print(t)
-end)
-tab:Colorpicker("ESP Color", Color3.fromRGB(255,1,1), function(t)
-print(t)
-end)
-tab:Textbox("Gun Power", "This textbox changes your gun power, so you can kill everyone faster and easier.", true, function(t)
-print(t)
-end)
-tab:Bind("Kill Bind", Enum.KeyCode.Q, function()
-print("Killed a random person!")
-end)
------more---
-local tab = win:Tab("script", "http://www.roblox.com/asset/?id=6022668888")
+local anotherTab = window:CreateTab("another", "Misc", "Your dad")
 
-tab:Colorpicker("ESP Color", Color3.fromRGB(255,1,1), function(t)
-print(t)
+anotherTab:CreateButton("Leave", function()  -- buttonname, callback
+    game.Players.LocalPlayer:Kick()    
 end)
 
-tab:Button("ESP", "This function may not work sometimes and you can get banned.", function()
-----E
-
-local esp_settings = { ---- table for esp settings 
-    textsize = 8,
-    colour = 255,255,255
-}
-
-local gui = Instance.new("BillboardGui")
-local esp = Instance.new("TextLabel",gui) ---- new instances to make the billboard gui and the textlabel
-
-
-
-gui.Name = "Cracked esp"; ---- properties of the esp
-gui.ResetOnSpawn = false
-gui.AlwaysOnTop = true;
-gui.LightInfluence = 0;
-gui.Size = UDim2.new(1.75, 0, 1.75, 0);
-esp.BackgroundColor3 = Color3.fromRGB(255, 255, 255);
-esp.Text = ""
-esp.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001);
-esp.BorderSizePixel = 4;
-esp.BorderColor3 = Color3.new(esp_settings.colour)
-esp.BorderSizePixel = 0
-esp.Font = "GothamSemibold"
-esp.TextSize = esp_settings.textsize
-esp.TextColor3 = Color3.fromRGB(esp_settings.colour) -- text colour
-
-game:GetService("RunService").RenderStepped:Connect(function() ---- loops faster than a while loop :)
-    for i,v in pairs (game:GetService("Players"):GetPlayers()) do
-        if v ~= game:GetService("Players").LocalPlayer and v.Character.Head:FindFirstChild("Cracked esp")==nil  then -- craeting checks for team check, local player etc
-            esp.Text = "{"..v.Name.."}"
-            gui:Clone().Parent = v.Character.Head
-    end
-end
-end)
-end)
-
-
-tab:Slider("Walkspeed", "Makes your faster.", 0, 100,16,function(t)
-print(t)
-end)
-
-
-tab:Button("RESET", "This function may not work sometimes and you can get banned.", function()
-Flux:Notification("reset players successfully!", "Alright")
+main:CreateButton("Die", function()  -- buttonname, callback
 game.Players.LocalPlayer.Character.Humanoid.Health = 0
 end)
 
-tab:Toggle("Auto-?", "Automatically collects coins for you!", function(t)
-print(t)
+main:CreateToggle("Speed", function(bool) -- togglename, callback
+if bool then
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50
+else
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end    
 end)
 
 
-tab:Toggle("soon", "Automatically collects coins for you!", function(t)
-print(t)
+local dropdown = main:CreateDropdown("Teleports", TPlist, function(option) -- dropdownname, list, callback
+print(option)    
 end)
-----more---
+wait(30)
+TPlist = {"Subway", "Spawn"} -- changes the options in the variable of the list
+dropdown:Refresh(TPlist) -- refresh dropdown with new options
 
-local tab = win:Tab("Setting", "")
+--[[
+¿HOW TO REFRESH A DROPDOWN?
+First of all, make ur dropdown a variable, example: local hi = urtab:CreateDropdown("yourmom",{"your dad"}, function(option) print(option) end)
+
+then do hi:Refresh({"new options here"})
+
+¿WHY YOU SHOULD GIVE ME A REP?
+jk
+
+thanks Megami Tensei for the idea
+]]
