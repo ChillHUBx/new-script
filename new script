@@ -31,14 +31,33 @@ end)
 
 ------end----
 
-local Tab1 = Window:NewTab("setting")
-local Tab1Section = Tab1:NewSection("setting")
+local Tab1 = Window:NewTab("setting/RTX♻️")
+local Tab1Section = Tab1:NewSection("setting/RTX")
 
 Tab1Section:NewToggle("auto pickup", "Changes Fov", function(state)
     if state then
-        game.Workspace.CurrentCamera.FieldOfView = 120
+        auto pickup
+_G.on = true --false to turn off and true to turn on
+while _G.on do
+wait(3) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
+end
     else
-        game.Workspace.CurrentCamera.FieldOfView = 80
+        auto pickup
+_G.on = false --false to turn off and true to turn on
+while _G.on do
+wait(3) -- you can change the delay here
+char = game:GetService('Players').LocalPlayer.Character
+game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
+char = body end)
+for i,v in pairs(workspace:GetDescendants()) do
+if v:IsA('Tool') then
+char.Humanoid:EquipTool(v) end end
     end
 end)
 
@@ -49,3 +68,9 @@ Tab1Section:NewToggle("anti cheat", "Changes Fov", function(state)
         game.Workspace.CurrentCamera.FieldOfView = 80
     end
 end)
+
+local Tab1Section = Tab1:NewSection("RTX")
+
+Tab1Section:NewButton("RTX", "♻️♻️", function()
+
+end) 
