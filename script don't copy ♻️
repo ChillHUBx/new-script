@@ -31,3 +31,6 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
    print("Aimbot Active:", boolean)
 end)
 
+local chillTab = CoastingLibrary:CreateTab("Aimbot")
+local MainSection = chillTab:CreateSection("Main")
+local ConfigSection = chiTab:CreateSection("Config")
