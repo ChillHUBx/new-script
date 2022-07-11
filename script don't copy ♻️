@@ -33,4 +33,20 @@ end)
 
 local chillTab = CoastingLibrary:CreateTab("Aimbot")
 local MainSection = chillTab:CreateSection("Main")
-local ConfigSection = chillTab:CreateSection("Config")
+local playerSection = chillTab:CreateSection("Player")
+
+PlayerSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
+   print("Aimbot Active:", boolean)
+end)
+
+PlayerSection:CreateButton("Click Me!", function()
+   print("Boo!")    
+end)
+
+PlayerSection:CreateButton("Click Me!", function()
+   print("Boo!")    
+end)
+
+PlayerSection:CreateButton("Click Me!", function()
+   print("Boo!")    
+end)
