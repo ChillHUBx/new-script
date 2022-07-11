@@ -1,7 +1,7 @@
 
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
-local HubTab = CoastingLibrary:CreateTab("Aimbot")
+local HubTab = CoastingLibrary:CreateTab("HOME")
 local MainSection = HubTab:CreateSection("Main")
 local ConfigSection = HubTab:CreateSection("Config")
 
@@ -31,32 +31,33 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
    print("Aimbot Active:", boolean)
 end)
 
-local chillTab = CoastingLibrary:CreateTab("Aimbot")
+local chillTab = CoastingLibrary:CreateTab("GAME")
 local MainSection = chillTab:CreateSection("Main")
-local playerSection = chillTab:CreateSection("Player")
+local playerSection = chillTab:CreateSection("player")
 
-PlayerSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
+playerSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
    print("Aimbot Active:", boolean)
 end)
 
-PlayerSection:CreateButton("Click Me!", function()
+playerSection:CreateButton("Click Me!", function()
    print("Boo!")    
 end)
 
-PlayerSection:CreateButton("Click Me!", function()
+playerSection:CreateButton("Click Me!", function()
    print("Boo!")    
 end)
 
-PlayerSection:CreateButton("Click Me!", function()
+playerSection:CreateButton("Click Me!", function()
    print("Boo!")    
 end)
 
 ---end---
 
-local RTXTab = CoastingLibrary:CreateTab("RTX")
-local MainSection = RTXTab:CreateSection("RTX")
+local ChillTab = CoastingLibrary:CreateTab("RTX")
+local MainSection = ChillTab:CreateSection("RTX")
 
-RTXSection:CreateButton("Sun set", function()
+
+ZSection:CreateButton("Sun set", function()
    -- Credits to Instance Serializer for helping me convert the Tokyowami shrine whatever thing to luau
 if not game:IsLoaded() then
     game.Loaded:Wait()
@@ -290,6 +291,7 @@ L.FogStart = 0
 L.ExposureCompensation = 0.24
 L.ShadowSoftness = 0
 L.Ambient = Color3.fromRGB(59, 33, 27)   
+
 end)
 
 ---end---
