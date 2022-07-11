@@ -1,9 +1,7 @@
 
-
--- subscribe to kaizen
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
-local AimbotTab = CoastingLibrary:CreateTab("Aimbot")
+local HubTab = CoastingLibrary:CreateTab("Aimbot")
 local MainSection = AimbotTab:CreateSection("Main")
 local ConfigSection = AimbotTab:CreateSection("Config")
 
@@ -33,3 +31,4 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
    print("Aimbot Active:", boolean)
 end)
 
+local HubTab = CoastingLibrary:CreateTab("Setting")
