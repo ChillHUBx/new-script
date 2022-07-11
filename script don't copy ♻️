@@ -1,140 +1,35 @@
-local Library = loadstring(game:HttpGet("https://pastebin.com/raw/vff1bQ9F"))()
-local Window = Library.CreateLib("CHill🟧HUB", "Ocean")
-
--- Tabs
-
-local Tab1 = Window:NewTab("Main/game")
-local Tab1Section = Tab1:NewSection("Main/game")
-
--- Buttons/Windows/Idk
 
 
-Tab1Section:NewButton("Inf Jumps", "Enables Inf Jumps", function()
-    local InfiniteJumpEnabled = true
-game:GetService("UserInputService").JumpRequest:connect(function()
-	if InfiniteJumpEnabled then
-		game:GetService"Players".LocalPlayer.Character:FindFirstChildOfClass'Humanoid':ChangeState("Jumping")
-	end
-end)
+-- subscribe to kaizen
+local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
+
+local AimbotTab = CoastingLibrary:CreateTab("Aimbot")
+local MainSection = AimbotTab:CreateSection("Main")
+local ConfigSection = AimbotTab:CreateSection("Config")
+
+MainSection:CreateButton("Click Me!", function()
+   print("Boo!")    
 end)
 
-Tab1Section:NewToggle("Fov", "Changes Fov", function(state)
-    if state then
-        game.Workspace.CurrentCamera.FieldOfView = 120
-    else
-        game.Workspace.CurrentCamera.FieldOfView = 80
-    end
+MainSection:CreateLabel("Namey", "Hello!")
+
+MainSection:CreateToggle("Aimbot", function(boolean)
+   print("Aimbot:", boolean)
 end)
 
-Tab1Section:NewSlider("Speed", "Sussy Speed", 250, 120, function(v)
-    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = v
+MainSection:CreateSlider("Field Of View", 0, 150, 50, false, function(value)
+   print("Field of View: " .. value)
 end)
 
-------end----
-
-local Tab1 = Window:NewTab("setting/RTX♻️")
-local Tab1Section = Tab1:NewSection("setting/RTX")
-
-Tab1Section:NewToggle("auto pickup tool♻️?", "1223", function(state)
-    if state then
-        --auto pickup
-_G.on = true --false to turn off and true to turn on
-while _G.on do
-wait(3) -- you can change the delay here
-char = game:GetService('Players').LocalPlayer.Character
-game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
-char = body end)
-for i,v in pairs(workspace:GetDescendants()) do
-if v:IsA('Tool') then
-char.Humanoid:EquipTool(v) end end
-end
-    else
-        --auto pickup
-_G.on = false --false to turn off and true to turn on
-while _G.on do
-wait(3) -- you can change the delay here
-char = game:GetService('Players').LocalPlayer.Character
-game:GetService('Players').LocalPlayer.CharacterAdded:connect(function(body)
-char = body end)
-for i,v in pairs(workspace:GetDescendants()) do
-if v:IsA('Tool') then
-char.Humanoid:EquipTool(v) end end
-end
-    end
+ConfigSection:CreateColorPicker("Field of View Color", Color3.fromRGB(255, 255, 255), function(color)
+   print("Field Of View Color:", color)
 end)
 
-Tab1Section:NewToggle("anti cheat", "Changes Fov", function(state)
-    if state then
-        game.Workspace.CurrentCamera.FieldOfView = 120
-    else
-        game.Workspace.CurrentCamera.FieldOfView = 80
-    end
+ConfigSection:CreateDropdown("Type", {"Mouse", "Character"}, 1, function(option)
+   print("Type: " .. option)
 end)
 
-Tab1Section:NewTextBox("/console", "updates-Info", function(txt)
-	print(txt)
+ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
+   print("Aimbot Active:", boolean)
 end)
-
-
-
-local Tab1Section = Tab1:NewSection("RTX")
-
-Tab1Section:NewButton("RTX HDR!", "♻️♻️", function()
-local a = game.Lighting
-a.Ambient = Color3.fromRGB(33, 33, 33)
-a.Brightness = 5.69
-a.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
-a.ColorShift_Top = Color3.fromRGB(255, 247, 237)
-a.EnvironmentDiffuseScale = 0.105
-a.EnvironmentSpecularScale = 0.522
-a.GlobalShadows = true
-a.OutdoorAmbient = Color3.fromRGB(51, 54, 67)
-a.ShadowSoftness = 0.18
-a.GeographicLatitude = -15.525
-a.ExposureCompensation = 0.75
-b.Enabled = true
-b.Intensity = 0.99
-b.Size = 9999 
-b.Threshold = 0
-local c = Instance.new("ColorCorrectionEffect", a)
-c.Brightness = 0.015
-c.Contrast = 0.25
-c.Enabled = true
-c.Saturation = 0.2
-c.TintColor = Color3.fromRGB(217, 145, 57)
-if getgenv().mode == "Summer" then
-   c.TintColor = Color3.fromRGB(255, 220, 148)
-elseif getgenv().mode == "Autumn" then
-   c.TintColor = Color3.fromRGB(217, 145, 57)
-else
-   warn("No mode selected!")
-   print("Please select a mode")
-   b:Destroy()
-   c:Destroy()
-end
-local d = Instance.new("DepthOfFieldEffect", a)
-d.Enabled = true
-d.FarIntensity = 0.077
-d.FocusDistance = 21.54
-d.InFocusRadius = 20.77
-d.NearIntensity = 0.277
-local e = Instance.new("ColorCorrectionEffect", a)
-e.Brightness = 0
-e.Contrast = -0.07
-e.Saturation = 0
-e.Enabled = true
-e.TintColor = Color3.fromRGB(255, 247, 239)
-local e2 = Instance.new("ColorCorrectionEffect", a)
-e2.Brightness = 0.2
-e2.Contrast = 0.45
-e2.Saturation = -0.1
-e2.Enabled = true
-e2.TintColor = Color3.fromRGB(255, 255, 255)
-local s = Instance.new("SunRaysEffect", a)
-s.Enabled = true
-s.Intensity = 0.01
-s.Spread = 0.146
-
-print("RTX Graphics loaded! Created by ChillHUB")
-end) 
 
