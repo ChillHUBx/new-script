@@ -33,4 +33,4 @@ end)
 
 local chillTab = CoastingLibrary:CreateTab("Aimbot")
 local MainSection = chillTab:CreateSection("Main")
-local ConfigSection = chiTab:CreateSection("Config")
+local ConfigSection = chillTab:CreateSection("Config")
