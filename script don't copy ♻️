@@ -1,6 +1,4 @@
 
-
--- subscribe to kaizen
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
 local HubTab = CoastingLibrary:CreateTab("Aimbot")
