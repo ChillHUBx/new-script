@@ -304,10 +304,16 @@ hubsSection:CreateButton("Click Bypass", function()
 end)
 
 hubsSection:CreateButton("New! reset", function()
-   game.Players.LocalPlayer.Character.Humanoid.Health = 0    
+       
 end)
 
 
-hubsSection:CreateToggle("Aimbot", function(boolean)
-   print("Aimbot:", boolean)
+hubsSection:CreateButton("tp safe?", function(boolean)
+   
+local CFrameEnd = CFrame.new(-2014, 14, 125) -- Place your coords in here
+local Time = 50 -- Time in seconds
+local tween =  game:GetService("TweenService"):Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(Time), {CFrame = CFrameEnd})
+tween:Play()
+tween.Completed:Wait(), boolean)
 end)
+
