@@ -292,3 +292,17 @@ L.ShadowSoftness = 0
 L.Ambient = Color3.fromRGB(59, 33, 27)   
 
 end)
+
+
+
+local settingTab = CoastingLibrary:CreateTab("setting")
+local settingSection = setting:CreateSection("setting")
+
+settingSection:CreateButton("Click Bypass", function()
+   print("Boo!")    
+end)
+
+
+settingSection:CreateToggle("Aimbot", function(boolean)
+   print("Aimbot:", boolean)
+end)
