@@ -308,7 +308,7 @@ hubsSection:CreateButton("New! reset", function()
 end)
 
 
-hubsSection:CreateButton("tp safe?", function(boolean)
+hubsSection:CreateButton("tp safe?", function()
    
 local CFrameEnd = CFrame.new(-2014, 14, 125) -- Place your coords in here
 local Time = 50 -- Time in seconds
