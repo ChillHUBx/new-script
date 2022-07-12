@@ -30,9 +30,10 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
    print("Aimbot Active:", boolean)
 end)
 
-local chillTab = CoastingLibrary:CreateTab("GAME")
-local MainSection = chillTab:CreateSection("Main")
-local playerSection = chillTab:CreateSection("player")
+local settingTab = CoastingLibrary:CreateTab("setting")
+local MainSection = settingTab:CreateSection("setting")
+local settingSection = settingTab:CreateSection("setting")
+
 
 playerSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
    print("Aimbot Active:", boolean)
