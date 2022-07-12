@@ -1,4 +1,3 @@
-
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
 local HubTab = CoastingLibrary:CreateTab("HOME")
@@ -54,7 +53,7 @@ end)
 ---end---
 
 local ChillTab = CoastingLibrary:CreateTab("RTX")
-local MainSection = ChillTab:CreateSection("RTX")
+local ChillSection = ChillTab:CreateSection("RTX")
 
 
 ChillSection:CreateButton("Sun set", function()
@@ -293,5 +292,3 @@ L.ShadowSoftness = 0
 L.Ambient = Color3.fromRGB(59, 33, 27)   
 
 end)
-
----end---
