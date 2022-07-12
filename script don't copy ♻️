@@ -304,7 +304,7 @@ hubsSection:CreateButton("Click Bypass", function()
 end)
 
 hubsSection:CreateButton("New! reset", function()
-       
+  game.Players.LocalPlayer.Character.Humanoid.Health = 0     
 end)
 
 
