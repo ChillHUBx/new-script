@@ -30,9 +30,9 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
    print("Aimbot Active:", boolean)
 end)
 
-local settingTab = CoastingLibrary:CreateTab("setting")
-local MainSection = settingTab:CreateSection("setting")
-local settingSection = settingTab:CreateSection("setting")
+local mainTab = CoastingLibrary:CreateTab("main")
+local MainSection = mainTab:CreateSection("main")
+local playerSection = playerTab:CreateSection("player")
 
 
 playerSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
@@ -53,7 +53,7 @@ end)
 
 ---end---
 
-local ChillTab = CoastingLibrary:CreateTab("RTX")
+local Chillab = CoastingLibrary:CreateTab("RTX")
 local ChillSection = ChillTab:CreateSection("RTX")
 
 
