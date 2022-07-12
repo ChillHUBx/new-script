@@ -30,8 +30,8 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
    print("Aimbot Active:", boolean)
 end)
 
-local mainTab = CoastingLibrary:CreateTab("main")
-local mainSection = mainTab:CreateSection("main")
+local mainTab = CoastingLibrary:CreateTab("game")
+local mainSection = mainTab:CreateSection("game")
 local playerSection = mainTab:CreateSection("player")
 
 
@@ -53,11 +53,11 @@ end)
 
 ---end---
 
-local Chillab = CoastingLibrary:CreateTab("RTX")
-local ChillSection = ChillTab:CreateSection("RTX")
+local chillTab = CoastingLibrary:CreateTab("RTX")
+local chillSection = chillTab:CreateSection("RTX")
 
 
-ChillSection:CreateButton("Sun set", function()
+chillSection:CreateButton("Sun set", function()
    -- Credits to Instance Serializer for helping me convert the Tokyowami shrine whatever thing to luau
 if not game:IsLoaded() then
     game.Loaded:Wait()
@@ -295,15 +295,15 @@ L.Ambient = Color3.fromRGB(59, 33, 27)
 end)
 
 
+local main1Tab = CoastingLibrary:CreateTab("setting")
+local mainSection = main1Tab:CreateSection("setting")
+local hubsSection = main1Tab:CreateSection("player")
 
-local settingTab = CoastingLibrary:CreateTab("setting")
-local settingSection = setting:CreateSection("setting")
-
-settingSection:CreateButton("Click Bypass", function()
+hubsSection:CreateButton("Click Bypass", function()
    print("Boo!")    
 end)
 
 
-settingSection:CreateToggle("Aimbot", function(boolean)
+hubsSection:CreateToggle("Aimbot", function(boolean)
    print("Aimbot:", boolean)
 end)
