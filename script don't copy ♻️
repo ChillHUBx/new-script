@@ -303,6 +303,10 @@ hubsSection:CreateButton("Click Bypass", function()
    print("Boo!")    
 end)
 
+hubsSection:CreateButton("New! reset", function()
+   game.Players.LocalPlayer.Character.Humanoid.Health = 0    
+end)
+
 
 hubsSection:CreateToggle("Aimbot", function(boolean)
    print("Aimbot:", boolean)
