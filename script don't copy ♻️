@@ -31,7 +31,7 @@ ConfigSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, fu
 end)
 
 local mainTab = CoastingLibrary:CreateTab("main")
-local MainSection = mainTab:CreateSection("main")
+local mainSection = mainTab:CreateSection("main")
 local playerSection = mainTab:CreateSection("player")
 
 
