@@ -61,6 +61,106 @@ mainSection:CreateButton("set 70", function()
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70    
 end)
 
+mainSection:CreateLabel("Namey", "set speed Bypass")
+
+mainSection:CreateButton("set 20", function()
+    local walkSpeed = 20
+
+local gmt = getrawmetatable(game)
+
+setreadonly(gmt, false)
+
+local oldindex = gmt.__index
+
+gmt.__index = newcclosure(function(self,b)
+
+if b == "WalkSpeed" then
+
+return 16
+
+end
+
+return oldindex(self,b)
+
+end)
+
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed     
+end)
+
+
+mainSection:CreateButton("set 30", function()
+    local walkSpeed = 30
+
+local gmt = getrawmetatable(game)
+
+setreadonly(gmt, false)
+
+local oldindex = gmt.__index
+
+gmt.__index = newcclosure(function(self,b)
+
+if b == "WalkSpeed" then
+
+return 16
+
+end
+
+return oldindex(self,b)
+
+end)
+
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed     
+end)
+
+mainSection:CreateButton("set 40", function()
+    local walkSpeed = 40
+
+local gmt = getrawmetatable(game)
+
+setreadonly(gmt, false)
+
+local oldindex = gmt.__index
+
+gmt.__index = newcclosure(function(self,b)
+
+if b == "WalkSpeed" then
+
+return 16
+
+end
+
+return oldindex(self,b)
+
+end)
+
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed     
+end)
+
+mainSection:CreateButton("set 60", function()
+    local walkSpeed = 50
+
+local gmt = getrawmetatable(game)
+
+setreadonly(gmt, false)
+
+local oldindex = gmt.__index
+
+gmt.__index = newcclosure(function(self,b)
+
+if b == "WalkSpeed" then
+
+return 16
+
+end
+
+return oldindex(self,b)
+
+end)
+
+game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed     
+end)
+
+
 playerSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
    print("Aimbot Active:", boolean)
 end)
