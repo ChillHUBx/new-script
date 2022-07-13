@@ -10,10 +10,10 @@ local NotificationBindable = Instance.new("BindableFunction")
 NotificationBindable.OnInvoke = callback
 --
 game.StarterGui:SetCore("SendNotification",  {
- Title = "System📱🖥🛡";
+ Title = "System📱🖥🛡-support";
  Text = "Made By ChillHubx";
  Icon = "";
- Duration = 5;
+ Duration = 10;
  Button1 = "no ty";
  Button2 = "type/console";
  Callback = NotificationBindable;
@@ -21,7 +21,7 @@ game.StarterGui:SetCore("SendNotification",  {
 
 
 
-
+wait(3) 
 ----load----script---
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
