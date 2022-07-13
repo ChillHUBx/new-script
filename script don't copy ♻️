@@ -21,7 +21,7 @@ game.StarterGui:SetCore("SendNotification",  {
 
 
 
-wait(3) 
+wait(5) 
 ----load----script---
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
