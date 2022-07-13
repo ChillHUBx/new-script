@@ -296,8 +296,14 @@ end)
 
 
 local main1Tab = CoastingLibrary:CreateTab("setting")
-local mainSection = main1Tab:CreateSection("setting")
+local main1Section = main1Tab:CreateSection("setting")
 local hubsSection = main1Tab:CreateSection("player")
+
+main1Section:CreateButton("Shift Lock ", function()
+   print("Boo!")    
+end)
+
+
 
 hubsSection:CreateButton("Click Bypass", function()
    print("Boo!")    
