@@ -1,3 +1,9 @@
+
+
+
+
+
+----load----script---
 local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
 
 local HubTab = CoastingLibrary:CreateTab("HOME")
@@ -34,8 +40,10 @@ local mainTab = CoastingLibrary:CreateTab("game")
 local mainSection = mainTab:CreateSection("game")
 local playerSection = mainTab:CreateSection("player")
 
-mainSection:CreateLabel("Namey", "Item ESP ")
-for i,v in pairs(game.Workspace:GetDescendants()) do -- grabs everything from workspace
+
+
+mainSection:CreateButton("ESP item", function()
+   for i,v in pairs(game.Workspace:GetDescendants()) do -- grabs everything from workspace
     if v.ClassName == 'TouchTransmitter' and v.Parent.Name == 'Handle' then -- checks if it has a handle and if its a touchtransmitter
         local BillboardGui = Instance.new('BillboardGui') -- Makes Billboardgui
         local TextLabel = Instance.new('TextLabel') -- makes text label
@@ -53,18 +61,10 @@ for i,v in pairs(game.Workspace:GetDescendants()) do -- grabs everything from wo
         TextLabel.TextColor3 = Color3.new(1, 0, 0) -- color
         TextLabel.TextScaled = true -- if the text is scaled or not
     end
-    end
-end) 
-
-mainSection:CreateButton("set 20", function()
-   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20    
+    end    
 end)
 
-mainSection:CreateButton("set 30", function()
-   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 30    
-end)
-
-mainSection:CreateButton("set 40", function()
+mainSection:CreateButton("ESP player", function()
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 40    
 end)
 
@@ -73,9 +73,26 @@ mainSection:CreateButton("set 50", function()
 end)
 
 
-mainSection:CreateLabel("Namey", "set speed Bypass")
+playerSection:CreateLabel("Namey", "set speed Bypass")
 
-mainSection:CreateButton("set 20", function()
+
+playerSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
+   print("Aimbot Active:", boolean)
+end)
+
+playerSection:CreateButton("Click Me!", function()
+   print("Boo!")    
+end)
+
+playerSection:CreateButton("Click Me!", function()
+   print("Boo!")    
+end)
+
+playerSection:CreateButton("Click Me!", function()
+   print("Boo!")    
+end)
+
+playerSection:CreateButton("set 20", function()
     local walkSpeed = 20
 
 local gmt = getrawmetatable(game)
@@ -100,7 +117,7 @@ game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
 end)
 
 
-mainSection:CreateButton("set 30", function()
+playerSection:CreateButton("set 30", function()
     local walkSpeed = 30
 
 local gmt = getrawmetatable(game)
@@ -124,7 +141,7 @@ end)
 game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed     
 end)
 
-mainSection:CreateButton("set 40", function()
+playerSection:CreateButton("set 40", function()
     local walkSpeed = 40
 
 local gmt = getrawmetatable(game)
@@ -148,8 +165,8 @@ end)
 game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed     
 end)
 
-mainSection:CreateButton("set 20", function()
-    local walkSpeed = 2o
+playerSection:CreateButton("set 20", function()
+    local walkSpeed = 20
 
 local gmt = getrawmetatable(game)
 
@@ -173,21 +190,10 @@ game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed
 end)
 
 
-playerSection:CreateKeybind("Aimbot Bind", Enum.KeyCode.Unknown, false, true, function(boolean)
-   print("Aimbot Active:", boolean)
-end)
 
-playerSection:CreateButton("Click Me!", function()
-   print("Boo!")    
-end)
 
-playerSection:CreateButton("Click Me!", function()
-   print("Boo!")    
-end)
 
-playerSection:CreateButton("Click Me!", function()
-   print("Boo!")    
-end)
+
 
 ---end---
 
