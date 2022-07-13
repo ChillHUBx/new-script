@@ -34,7 +34,7 @@ local mainTab = CoastingLibrary:CreateTab("game")
 local mainSection = mainTab:CreateSection("game")
 local playerSection = mainTab:CreateSection("player")
 
-mainSection:CreateLabel("Namey", "set speed")
+mainSection:CreateLabel("Namey", "ESP ")
 
 mainSection:CreateButton("set 20", function()
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 20    
@@ -52,14 +52,6 @@ mainSection:CreateButton("set 50", function()
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50    
 end)
 
-
-mainSection:CreateButton("set 60", function()
-   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 60    
-end)
-
-mainSection:CreateButton("set 70", function()
-   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 70    
-end)
 
 mainSection:CreateLabel("Namey", "set speed Bypass")
 
@@ -136,8 +128,8 @@ end)
 game:GetService("Players").LocalPlayer.Character.Humanoid.WalkSpeed = walkSpeed     
 end)
 
-mainSection:CreateButton("set 60", function()
-    local walkSpeed = 50
+mainSection:CreateButton("set 20", function()
+    local walkSpeed = 2o
 
 local gmt = getrawmetatable(game)
 
