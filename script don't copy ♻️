@@ -87,8 +87,61 @@ mainSection:CreateButton("ESP player", function()
    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 40    
 end)
 
-mainSection:CreateButton("set 50", function()
-   game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 50    
+mainSection:CreateLabel("Namey", "Player System")
+
+
+mainSection:CreateButton("delete user and face", function()
+   for _,m in pairs(game:GetService("Workspace"):GetDescendants()) do
+if m.ClassName == "TextLabel" then 
+if m.Text == game:GetService("Players").LocalPlayer.Name then
+m:Destroy()
+for j,m in pairs(game:GetService("Players").LocalPlayer:GetDescendants()) do
+if m.ClassName == "TextLabel" then 
+if m.Text == game:GetService("Players").LocalPlayer.Name then
+m:Destroy()
+for h,v in pairs(workspace[game.Players.LocalPlayer.Name].Head:GetChildren()) do
+if v:IsA('BillboardGui') then
+v:Remove()
+end
+end
+end
+end
+end
+end
+end
+end
+
+while true do
+    for i,s in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if s:IsA("Accessory") then
+    s.Parent = workspace
+    end
+    end
+
+    for i,f in pairs(game.Workspace[game.Players.LocalPlayer.Name].Head:GetChildren()) do
+        if f:IsA("Decal") and f.Name == "face" then
+            f.Parent = nil
+        end
+    end
+
+    if game.Players.LocalPlayer.Character.Shirt then
+    game.Players.LocalPlayer.Character.Shirt:Remove()
+    else
+    end
+    if game.Players.LocalPlayer.Character.Pants then
+    game.Players.LocalPlayer.Character.Pants:Remove()
+    else
+    end
+    if game.Players.LocalPlayer.Character["Shirt Graphic"] then
+    game.Players.LocalPlayer.Character["Shirt Graphic"]:Remove()
+    else
+    end
+    if game.Players.LocalPlayer.Character.Torso.roblox then
+    game.Players.LocalPlayer.Character.Torso.roblox:Remove()
+    else
+    end
+    game:GetService("RunService").Stepped:wait()
+end    
 end)
 
 
