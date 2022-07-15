@@ -11,7 +11,7 @@ NotificationBindable.OnInvoke = callback
 --
 game.StarterGui:SetCore("SendNotification",  {
  Title = "System📱🖥🛡-support";
- Text = "Made By ChillHubx";
+ Text = "Made By ChillHubx (Updating)";
  Icon = "";
  Duration = 10;
  Button1 = "no ty";
