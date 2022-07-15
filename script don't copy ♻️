@@ -181,8 +181,8 @@ while true do
 end    
 end)
 
-mainSection:CreateButton("dupe tool", Enum.KeyCode.Unknown, false, true, function(boolean)
-   LP = game:GetService("Players").LocalPlayer
+mainSection:CreateButton("dupe tool safe?", function()
+LP = game:GetService("Players").LocalPlayer
 for i,v in pairs(LP.Character:GetDescendants()) do
 if v:IsA("Tool") then
 v.Parent = LP
@@ -203,7 +203,6 @@ v.Parent = LP.Backpack
 end
 end
 end)
-
 
 
 
