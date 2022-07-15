@@ -122,6 +122,8 @@ end
 end)    
 end)
 
+
+
 mainSection:CreateLabel("Namey", "Player System")
 
 
@@ -179,7 +181,7 @@ while true do
 end    
 end)
 
-mainSection:CreateKeybind("Drop tool", Enum.KeyCode.Unknown, false, true, function(boolean)
+mainSection:CreateButton("Drop tools", Enum.KeyCode.Unknown, false, true, function(boolean)
    for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
 if v:IsA("Tool") then
 v.Parent = game.Workspace
