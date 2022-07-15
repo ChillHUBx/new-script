@@ -23,7 +23,7 @@ game.StarterGui:SetCore("SendNotification",  {
 
 wait(5) 
 ----load----script---
-local CoastingLibrary = loadstring(game:HttpGet("https://pastebin.com/raw/3gQQtaKX"))()
+local CoastingLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/ChillHUBx/code/main/codes"))()
 
 local HubTab = CoastingLibrary:CreateTab("HOME")
 local MainSection = HubTab:CreateSection("Main")
