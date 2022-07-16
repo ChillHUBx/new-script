@@ -123,11 +123,11 @@ end)
 end)
 
 mainSection:CreateLabel("Namey", "Drop tool any")
-
+mainSection:CreateButton("drop", function()
 game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Character
 
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Parent = game.Workspace
-
+end)
 
 mainSection:CreateLabel("Namey", "Player System")
 
