@@ -122,6 +122,11 @@ end
 end)    
 end)
 
+mainSection:CreateLabel("Namey", "Drop tool any")
+
+game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Players.LocalPlayer.Character
+
+game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Parent = game.Workspace
 
 
 mainSection:CreateLabel("Namey", "Player System")
