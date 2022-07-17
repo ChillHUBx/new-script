@@ -1,21 +1,12 @@
-local function callback(Text)
- if Text == "Button1 text" then
-  print ("Answer")
-elseif Text == ("Button2 text") then
-end
+local CoreGui = game:GetService("StarterGui") -- Variable of StarterGui
 
-local NotificationBindable = Instance.new("BindableFunction")
-NotificationBindable.OnInvoke = callback
---
-game.StarterGui:SetCore("SendNotification",  {
- Title = "System📱🖥🛡-support";
- Text = "Made By ChillHubx (Updating)";
- Icon = "";
- Duration = 10;
- Button1 = "copy?";
- Callback = NotificationBindable;
+CoreGui:SetCore("SendNotification", {
+    -- Customizable
+    Title = "Notification",
+    Text = "ChillHub.V2",
+    Duration = 10, -- Set the duration to how much you want this to stay
+    -- More code in part 2
 })
-
 
 
 wait(5) 
