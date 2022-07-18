@@ -129,8 +129,14 @@ game.Players.LocalPlayer.Backpack:FindFirstChildOfClass("Tool").Parent = game.Pl
 
 game.Players.LocalPlayer.Character:FindFirstChildOfClass("Tool").Parent = game.Workspace
 end)
-
+--end
 mainSection:CreateLabel("Namey", "Player System")
+
+
+mainSection:CreateButton("auto Click", function()
+
+end)
+
 
 mainSection:CreateButton("invisible R15", function()
 local removeNametags = false -- remove custom billboardgui nametags from hrp, could trigger anticheat
@@ -165,7 +171,7 @@ task.wait(0.5)
 newroot.Parent = hrp
 hrp.CFrame = old
 end)
-
+--end
 
 mainSection:CreateButton("delete user and face", function()
    for _,m in pairs(game:GetService("Workspace"):GetDescendants()) do
