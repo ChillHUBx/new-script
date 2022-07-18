@@ -47,6 +47,17 @@ local mainTab = CoastingLibrary:CreateTab("game")
 local mainSection = mainTab:CreateSection("game")
 local playerSection = mainTab:CreateSection("player")
 
+mainSection:CreateLabel("Namey", "sometime working")
+
+mainSection:CreateButton("FREE GAMEPASS", function()
+if game.CreatorType == Enum.CreatorType.User then
+game.Players.LocalPlayer.UserId = game.CreatorId
+end
+if game.CreatorType == Enum.CreatorType.Group then
+game.Players.LocalPlayer.UserId = game:GetService("GroupService"):GetGroupInfoAsync(game.CreatorId).Owner.Id
+end
+end)
+
 
 
 mainSection:CreateButton("ESP item", function()
